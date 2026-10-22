@@ -312,10 +312,10 @@
             font-size: 1.8rem;
         }
 
-        /* Skills Cards */
+        /* Expanded Skills Cards Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 24px;
         }
 
@@ -347,10 +347,41 @@
             color: var(--primary);
         }
 
+        .skill-item {
+            margin-bottom: 16px;
+        }
+
+        .skill-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 10px;
+        }
+
         .chips-container {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            margin-top: 15px;
         }
 
         .chip {
@@ -510,7 +541,7 @@
             <h2>Junior Data Analyst | Business Intelligence Specialist</h2>
             
             <p class="hero-bio">
-                Software Engineering graduate with an Excellent grade. Passionate about Data Analytics and Business Intelligence with hands-on experience in SQL, Excel, Power BI, Tableau, and Python. Skilled in data cleaning, visualization, sales analysis, and database design.
+                Software Engineering graduate with an Excellent grade[cite: 5]. Passionate about Data Analytics and Business Intelligence with hands-on experience in SQL, Excel, Power BI, Tableau, and Python[cite: 5]. Skilled in data cleaning, visualization, sales analysis, and database design[cite: 5].
             </p>
 
             <!-- Metrics Bar -->
@@ -530,12 +561,8 @@
             </div>
 
             <div class="social-links">
-                <!-- زر عرض الـ CV -->
                 <a href="Omar_CV.pdf" target="_blank" class="btn btn-primary"><i class="fa-solid fa-file-lines"></i> View CV</a>
-                
-                <!-- زر تحميل الـ CV المباشر -->
                 <a href="Omar_CV.pdf" download="Omar_Ragab_Shatla_CV.pdf" class="btn btn-outline"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
-                
                 <a href="https://linkedin.com/in/omar-shatla11" target="_blank" class="btn btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
                 <a href="https://github.com/OmarShatla11" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
                 <a href="tel:+201023465719" class="btn btn-outline"><i class="fa-solid fa-phone"></i> +20 102 346 5719</a>
@@ -553,54 +580,101 @@
             <div class="timeline-item" data-aos="fade-up">
                 <div class="timeline-date">Sharm El Sheikh, Egypt</div>
                 <h3>Data Analyst Intern / Specialist</h3>
-                <p style="color: var(--primary); font-weight: 600; margin-bottom: 12px;">Mango Market Group</p>
+                <p style="color: var(--primary); font-weight: 600; margin-bottom: 12px;">Mango Market Group[cite: 5]</p>
                 <ul style="color: var(--text-muted); font-size: 0.95rem; padding-left: 20px; line-height: 1.8;">
-                    <li>Processed and cleaned daily retail sales datasets to maintain data accuracy and integrity.</li>
-                    <li>Conducted sales performance analysis and generated dynamic reports to track revenue metrics and trends.</li>
-                    <li>Assisted management with data-driven operational insights to support strategic planning.</li>
+                    <li>Processed and cleaned daily retail sales datasets to maintain data accuracy and integrity[cite: 5].</li>
+                    <li>Conducted sales performance analysis and generated dynamic reports to track revenue metrics and trends[cite: 5].</li>
+                    <li>Assisted management with data-driven operational insights to support strategic planning[cite: 5].</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Deep & Comprehensive Skills Section -->
     <section class="section" id="skills">
         <div class="section-header" data-aos="fade-right">
-            <h2 class="section-title"><i class="fa-solid fa-chart-pie"></i> Technical Expertise</h2>
+            <h2 class="section-title"><i class="fa-solid fa-chart-pie"></i> Technical Skills & Proficiency</h2>
         </div>
         <div class="skills-grid">
+            
+            <!-- Category 1: Business Intelligence & Data Viz -->
             <div class="skill-card" data-aos="fade-up">
-                <h3><i class="fa-solid fa-code"></i> Querying & Scripting</h3>
-                <div class="chips-container">
-                    <span class="chip">Python</span>
-                    <span class="chip">SQL</span>
+                <h3><i class="fa-solid fa-chart-column"></i> Business Intelligence & Visualization</h3>
+                
+                <div class="skill-item">
+                    <div class="skill-info"><span>Power BI & DAX</span><span>90%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
                 </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
-                <h3><i class="fa-solid fa-chart-line"></i> Business Intelligence</h3>
-                <div class="chips-container">
-                    <span class="chip">Power BI</span>
-                    <span class="chip">Tableau</span>
-                    <span class="chip">Microsoft Excel</span>
-                    <span class="chip">Power Query</span>
-                    <span class="chip">DAX</span>
-                    <span class="chip">PivotTables</span>
-                    <span class="chip">Data Cleaning</span>
-                    <span class="chip">EDA</span>
+
+                <div class="skill-item">
+                    <div class="skill-info"><span>Microsoft Excel & Power Query</span><span>95%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
                 </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-                <h3><i class="fa-solid fa-database"></i> Database & BI Systems</h3>
+
+                <div class="skill-item">
+                    <div class="skill-info"><span>Tableau</span><span>80%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+                </div>
+
                 <div class="chips-container">
-                    <span class="chip">Microsoft SQL Server</span>
-                    <span class="chip">Database Design</span>
-                    <span class="chip">Data Modeling</span>
-                    <span class="chip">ETL Concepts</span>
                     <span class="chip">Dashboard Development</span>
-                    <span class="chip">Git</span>
+                    <span class="chip">KPI Tracking</span>
+                    <span class="chip">PivotTables</span>
+                </div>
+            </div>
+
+            <!-- Category 2: Data Querying & Databases -->
+            <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                <h3><i class="fa-solid fa-database"></i> Database Engineering & Querying</h3>
+                
+                <div class="skill-item">
+                    <div class="skill-info"><span>SQL & MSSQL Server</span><span>90%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-info"><span>Database Design & Modeling</span><span>85%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-info"><span>ETL Concepts & Processing</span><span>80%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+                </div>
+
+                <div class="chips-container">
+                    <span class="chip">Relational DB</span>
+                    <span class="chip">Query Optimization</span>
+                    <span class="chip">Data Normalization</span>
+                </div>
+            </div>
+
+            <!-- Category 3: Analytics & Programming -->
+            <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                <h3><i class="fa-solid fa-code"></i> Analytics & Programming</h3>
+                
+                <div class="skill-item">
+                    <div class="skill-info"><span>Python (Pandas, NumPy)</span><span>85%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-info"><span>Exploratory Data Analysis (EDA)</span><span>90%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-info"><span>Git & Version Control</span><span>80%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+                </div>
+
+                <div class="chips-container">
+                    <span class="chip">Data Cleaning</span>
+                    <span class="chip">Sales Analysis</span>
                     <span class="chip">Docker</span>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -616,7 +690,7 @@
             <div class="project-card" data-aos="fade-up">
                 <div class="project-body">
                     <h3 class="project-title">Sales & Profitability Analysis</h3>
-                    <p class="project-desc">Analyzed sales performance, revenue metrics, and profit margins across regions and categories. Modeled relational data in Power Query and created DAX measures for dynamic KPI tracking.</p>
+                    <p class="project-desc">Analyzed sales performance, revenue metrics, and profit margins across regions and categories[cite: 5]. Modeled relational data in Power Query and created DAX measures for dynamic KPI tracking[cite: 5].</p>
                     <div class="project-tags">
                         <span class="chip">Power BI</span>
                         <span class="chip">Power Query</span>
@@ -634,15 +708,13 @@
             <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="project-body">
                     <h3 class="project-title">MORA Intelligent ERP System Integrated with AI</h3>
-                    <p class="project-desc">Developed an AI-powered ERP system with sales forecasting and anomaly detection features. Led the Data module including database design, SQL queries, and business reporting. (Graduation Project - Grade: Excellent)</p>
+                    <p class="project-desc">Developed an AI-powered ERP system featuring sales forecasting and anomaly detection features[cite: 5]. Led the Data module including relational database design, SQL queries, and business reporting[cite: 5]. (Graduation Project - Grade: Excellent)[cite: 5]</p>
                     <div class="project-tags">
                         <span class="chip">SQL</span>
                         <span class="chip">SQL Server</span>
                         <span class="chip">Python</span>
                         <span class="chip">Database Design</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://github.com/OmarShatla11" target="_blank" class="btn btn-outline" style="width: 100%; justify-content: center;"><i class="fa-brands fa-github"></i> View GitHub Details</a>
+                        <span class="chip">AI & Forecasting</span>
                     </div>
                 </div>
             </div>
@@ -651,7 +723,7 @@
             <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="project-body">
                     <h3 class="project-title">Airline Performance Analysis</h3>
-                    <p class="project-desc">Transformed flight operational data to analyze delay trends, flight volumes, and carrier efficiency using relational data models and dynamic KPIs.</p>
+                    <p class="project-desc">Transformed flight operational data to analyze delay trends, flight volumes, and carrier efficiency using relational data models and dynamic KPIs[cite: 5].</p>
                     <div class="project-tags">
                         <span class="chip">Power BI</span>
                         <span class="chip">DAX</span>
@@ -693,17 +765,17 @@
             <div class="timeline-item" data-aos="fade-up">
                 <div class="timeline-date">2022 - 2026</div>
                 <h3>Bachelor of Information Technology - Software Engineering</h3>
-                <p style="color: var(--text-muted);">Faculty of Industrial Technology and Energy | Overall Grade: Excellent | Graduation Project: Excellent</p>
+                <p style="color: var(--text-muted);">Faculty of Industrial Technology and Energy | Overall Grade: Excellent | Graduation Project: Excellent[cite: 5]</p>
             </div>
             <div class="timeline-item" data-aos="fade-up">
                 <div class="timeline-date">2026</div>
                 <h3>Business Intelligence Training</h3>
-                <p style="color: var(--text-muted);">Information Technology Institute (ITI)</p>
+                <p style="color: var(--text-muted);">Information Technology Institute (ITI)[cite: 5]</p>
             </div>
             <div class="timeline-item" data-aos="fade-up">
                 <div class="timeline-date">Certifications</div>
                 <h3>Cisco Networking Academy (NetAcad)</h3>
-                <p style="color: var(--text-muted);">Data Analytics Essentials | Introduction to Data Science</p>
+                <p style="color: var(--text-muted);">Data Analytics Essentials | Introduction to Data Science[cite: 5]</p>
             </div>
         </div>
     </section>
