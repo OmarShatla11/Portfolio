@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar Ragab Shatla | Data Analyst & BI Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(22, 30, 49, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #06b6d4;
+            --primary-glow: rgba(6, 182, 212, 0.25);
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.25);
+            --chip-bg: rgba(6, 182, 212, 0.1);
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f1f5f9;
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --card-border: rgba(0, 0, 0, 0.08);
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --primary: #0284c7;
+            --primary-glow: rgba(2, 132, 199, 0.15);
+            --accent: #4f46e5;
+            --accent-glow: rgba(79, 70, 229, 0.15);
+            --chip-bg: rgba(2, 132, 199, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 20%, var(--primary-glow) 0%, transparent 45%),
+                radial-gradient(circle at 85% 80%, var(--accent-glow) 0%, transparent 45%);
+            background-attachment: fixed;
+        }
+
+        /* Glassmorphism Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(11, 15, 25, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--card-border);
+            padding: 18px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .theme-toggle {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 130px 24px 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .badge-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 30px;
+            background: var(--chip-bg);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .badge-status .pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        .profile-img-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            padding: 5px;
+            background: var(--card-bg);
+            box-shadow: 0 10px 30px var(--primary-glow);
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #ffffff 30%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h2 {
+            font-size: 1.35rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .hero-bio {
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 35px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* KPI Quick Metrics Bar */
+        .metrics-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .metric-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 12px 24px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 22px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #ffffff;
+            box-shadow: 0 4px 20px var(--primary-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--primary-glow);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Main Section Container */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        .section-header {
+            margin-bottom: 45px;
+        }
+
+        .section-title {
+            font-size: 2.1rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title i {
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        /* Skills Cards */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 30px;
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            border-color: rgba(6, 182, 212, 0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 20px;
+            color: var(--text-main);
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-card h3 i {
+            color: var(--primary);
+        }
+
+        .chips-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .chip {
+            background: var(--chip-bg);
+            color: var(--primary);
+            padding: 7px 16px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border: 1px solid rgba(6, 182, 212, 0.15);
+        }
+
+        /* Projects Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 28px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .project-body {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        /* Timeline / Experience */
+        .timeline {
+            position: relative;
+            border-left: 2px solid var(--card-border);
+            padding-left: 25px;
+            margin-left: 10px;
+        }
+
+        .timeline-item {
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.3rem; }
+            .nav-links { display: none; }
+            .metrics-bar { gap: 12px; }
+            .metric-item { padding: 10px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Omar <span>Shatla</span></div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-content" data-aos="fade-up">
+            <div class="badge-status">
+                <span class="pulse"></span> Open to Data Analytics Opportunities
+            </div>
+            
+            <div style="display: block;">
+                <div class="profile-img-wrapper">
+                    <img src="profile.jpg" alt="Omar Ragab Shatla" class="profile-img">
+                </div>
+            </div>
+
+            <h1>Omar Ragab Shatla</h1>
+            <h2>Junior Data Analyst | Business Intelligence Specialist</h2>
+            
+            <p class="hero-bio">
+                Software Engineering graduate with an Excellent grade. Passionate about Data Analytics and Business Intelligence with hands-on experience in SQL, Excel, Power BI, Tableau, and Python. Skilled in data cleaning, visualization, sales analysis, and database design.
+            </p>
+
+            <!-- Metrics Bar -->
+            <div class="metrics-bar">
+                <div class="metric-item">
+                    <div class="metric-value">4+</div>
+                    <div class="metric-label">BI Projects</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">Excellent</div>
+                    <div class="metric-label">Graduation Grade</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">ITI</div>
+                    <div class="metric-label">BI Trained</div>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <!-- زر عرض الـ CV -->
+                <a href="Omar_CV.pdf" target="_blank" class="btn btn-primary"><i class="fa-solid fa-file-lines"></i> View CV</a>
+                
+                <!-- زر تحميل الـ CV المباشر -->
+                <a href="Omar_CV.pdf" download="Omar_Ragab_Shatla_CV.pdf" class="btn btn-outline"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+                
+                <a href="https://linkedin.com/in/omar-shatla11" target="_blank" class="btn btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/OmarShatla11" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="tel:+201023465719" class="btn btn-outline"><i class="fa-solid fa-phone"></i> +20 102 346 5719</a>
+                <a href="mailto:omarshatla152@gmail.com" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section class="section" id="experience">
+        <div class="section-header" data-aos="fade-right">
+            <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Work Experience</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-date">Sharm El Sheikh, Egypt</div>
+                <h3>Data Analyst Intern / Specialist</h3>
+                <p style="color: var(--primary); font-weight: 600; margin-bottom: 12px;">Mango Market Group</p>
+                <ul style="color: var(--text-muted); font-size: 0.95rem; padding-left: 20px; line-height: 1.8;">
+                    <li>Processed and cleaned daily retail sales datasets to maintain data accuracy and integrity.</li>
+                    <li>Conducted sales performance analysis and generated dynamic reports to track revenue metrics and trends.</li>
+                    <li>Assisted management with data-driven operational insights to support strategic planning.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="section-header" data-aos="fade-right">
+            <h2 class="section-title"><i class="fa-solid fa-chart-pie"></i> Technical Expertise</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card" data-aos="fade-up">
+                <h3><i class="fa-solid fa-code"></i> Querying & Scripting</h3>
+                <div class="chips-container">
+                    <span class="chip">Python</span>
+                    <span class="chip">SQL</span>
+                </div>
+            </div>
+            <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                <h3><i class="fa-solid fa-chart-line"></i> Business Intelligence</h3>
+                <div class="chips-container">
+                    <span class="chip">Power BI</span>
+                    <span class="chip">Tableau</span>
+                    <span class="chip">Microsoft Excel</span>
+                    <span class="chip">Power Query</span>
+                    <span class="chip">DAX</span>
+                    <span class="chip">PivotTables</span>
+                    <span class="chip">Data Cleaning</span>
+                    <span class="chip">EDA</span>
+                </div>
+            </div>
+            <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                <h3><i class="fa-solid fa-database"></i> Database & BI Systems</h3>
+                <div class="chips-container">
+                    <span class="chip">Microsoft SQL Server</span>
+                    <span class="chip">Database Design</span>
+                    <span class="chip">Data Modeling</span>
+                    <span class="chip">ETL Concepts</span>
+                    <span class="chip">Dashboard Development</span>
+                    <span class="chip">Git</span>
+                    <span class="chip">Docker</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="section-header" data-aos="fade-right">
+            <h2 class="section-title"><i class="fa-solid fa-folder-open"></i> Featured Analytics Projects</h2>
+        </div>
+        
+        <div class="projects-grid">
+            
+            <!-- Project 1: Sales & Profitability -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-body">
+                    <h3 class="project-title">Sales & Profitability Analysis</h3>
+                    <p class="project-desc">Analyzed sales performance, revenue metrics, and profit margins across regions and categories. Modeled relational data in Power Query and created DAX measures for dynamic KPI tracking.</p>
+                    <div class="project-tags">
+                        <span class="chip">Power BI</span>
+                        <span class="chip">Power Query</span>
+                        <span class="chip">DAX</span>
+                        <span class="chip">Excel</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://omarshatla11.github.io/sales-profitability-powerbi/" target="_blank" class="btn btn-primary" style="flex: 1; justify-content: center;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                        <a href="https://github.com/OmarShatla11/sales-profitability-powerbi" target="_blank" class="btn btn-outline" style="flex: 1; justify-content: center;"><i class="fa-brands fa-github"></i> Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Graduation Project MORA ERP -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-body">
+                    <h3 class="project-title">MORA Intelligent ERP System Integrated with AI</h3>
+                    <p class="project-desc">Developed an AI-powered ERP system with sales forecasting and anomaly detection features. Led the Data module including database design, SQL queries, and business reporting. (Graduation Project - Grade: Excellent)</p>
+                    <div class="project-tags">
+                        <span class="chip">SQL</span>
+                        <span class="chip">SQL Server</span>
+                        <span class="chip">Python</span>
+                        <span class="chip">Database Design</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/OmarShatla11" target="_blank" class="btn btn-outline" style="width: 100%; justify-content: center;"><i class="fa-brands fa-github"></i> View GitHub Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Airline Performance -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-body">
+                    <h3 class="project-title">Airline Performance Analysis</h3>
+                    <p class="project-desc">Transformed flight operational data to analyze delay trends, flight volumes, and carrier efficiency using relational data models and dynamic KPIs.</p>
+                    <div class="project-tags">
+                        <span class="chip">Power BI</span>
+                        <span class="chip">DAX</span>
+                        <span class="chip">Data Modeling</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://omarshatla11.github.io/Airline-Performance-PowerBI/" target="_blank" class="btn btn-primary" style="flex: 1; justify-content: center;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                        <a href="https://github.com/OmarShatla11/Airline-Performance-PowerBI" target="_blank" class="btn btn-outline" style="flex: 1; justify-content: center;"><i class="fa-brands fa-github"></i> Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Call Center Performance -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-body">
+                    <h3 class="project-title">Call Center Performance Dashboard</h3>
+                    <p class="project-desc">Business intelligence dashboard evaluating call center KPIs, agent efficiency, call volumes, response times, and customer satisfaction metrics.</p>
+                    <div class="project-tags">
+                        <span class="chip">Power BI</span>
+                        <span class="chip">KPI Tracking</span>
+                        <span class="chip">Customer Analytics</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://omarshatla11.github.io/call-center-performance-powerbi/" target="_blank" class="btn btn-primary" style="flex: 1; justify-content: center;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                        <a href="https://github.com/OmarShatla11/call-center-performance-powerbi" target="_blank" class="btn btn-outline" style="flex: 1; justify-content: center;"><i class="fa-brands fa-github"></i> Repo</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education & Credentials Section -->
+    <section class="section" id="education">
+        <div class="section-header" data-aos="fade-right">
+            <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education & Credentials</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-date">2022 - 2026</div>
+                <h3>Bachelor of Information Technology - Software Engineering</h3>
+                <p style="color: var(--text-muted);">Faculty of Industrial Technology and Energy | Overall Grade: Excellent | Graduation Project: Excellent</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-date">2026</div>
+                <h3>Business Intelligence Training</h3>
+                <p style="color: var(--text-muted);">Information Technology Institute (ITI)</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-date">Certifications</div>
+                <h3>Cisco Networking Academy (NetAcad)</h3>
+                <p style="color: var(--text-muted);">Data Analytics Essentials | Introduction to Data Science</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Omar Ragab Shatla. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS JS for Scroll Animations -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        var themeToggleBtn = document.getElementById('themeToggle');
+        var htmlElement = document.documentElement;
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', function() {
+                if (htmlElement.getAttribute('data-theme') === 'light') {
+                    htmlElement.removeAttribute('data-theme');
+                    themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+                } else {
+                    htmlElement.setAttribute('data-theme', 'light');
+                    themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
